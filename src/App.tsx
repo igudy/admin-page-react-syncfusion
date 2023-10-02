@@ -23,9 +23,15 @@ import {
   ColorMapping,
   Editor,
 } from "./pages";
+import { useStateContext } from "./contexts/ContextProvider";
+
+interface ContextValue {
+  activeMenu: boolean;
+  setActiveMenu: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
 function App() {
-  const activeMenu = true;
+  const { activeMenu, setActiveMenu } = useStateContext() as ContextValue;
 
   return (
     <div>
